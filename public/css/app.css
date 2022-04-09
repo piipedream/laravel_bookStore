@@ -392,6 +392,14 @@ td{
   margin-right: 15px;
 }
 
+.home_poster{
+  background: url(/img/home_poster.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 50%;
+}
+
 /* ---------- */
 
 

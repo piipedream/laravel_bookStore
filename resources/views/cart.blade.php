@@ -76,27 +76,28 @@
                   </div>
 
                   @if (session('cart'))
-                  <h5 class="text-uppercase mb-3">Доставка</h5>
+                  <form action="{{route('checkout')}}" method="post">
+                    @csrf
+                    <h5 class="text-uppercase mb-3">Доставка</h5>
 
-                  <div class="mb-4 pb-2">
-                    <select id="delivery_select" class="select form-control form-control-lg">
-                      <option value="300">Стандартная доставка - 300 руб.</option>
-                      <option value="1000">Экспресс доставка - 1000 руб.</option>
-                    </select>
-                  </div>
+                    <div class="mb-4 pb-2">
+                      <select name="delivery_select" id="delivery_select" class="select form-control form-control-lg">
+                        <option value="300">Стандартная доставка - 300 руб.</option>
+                        <option value="1000">Экспресс доставка - 1000 руб.</option>
+                      </select>
+                    </div>
 
-                  <hr class="my-4">
+                    <hr class="my-4">
 
-                  <div class="d-flex justify-content-between mb-5">
-                    <h5 class="text-uppercase">Всего</h5>
-                    <h5><span id="totalAll">{{$totalPrice}}</span> руб.</h5>
-                  </div>
+                    <div class="d-flex justify-content-between mb-5">
+                      <h5 class="text-uppercase">Всего</h5>
+                      <h5><span id="totalAll">{{$totalPrice}}</span> руб.</h5>
+                    </div>
 
-                  <a href="{{route('checkout')}}">
-                    <button type="button" class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark">
+                    <button type="submit" class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark">
                       Оформить заказ
                     </button>
-                  </a>
+                  </form>
                   @endif
 
                 </div>

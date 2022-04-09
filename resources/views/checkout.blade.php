@@ -3,7 +3,6 @@
 @section('title-block')Оформление заказа @endsection
 
 @section('content')
-
   <div class="container py-5" style="width: 900px;">
     <div class="row">
       <div class="col-md-4 order-md-2 mb-4">
@@ -12,95 +11,103 @@
         </h4>
         <ul class="list-group mb-3">
           @php $totalPrice = 0 @endphp
-                    @if(session('cart'))
-                        @foreach(session('cart') as $id => $details)
-                            @php $totalPrice += $details['price'] * $details['quantity'] @endphp
-                            <li class="list-group-item d-flex justify-content-between lh-condensed">
-                              <div>
-                                <h6 class="my-0">{{$details['author']}}</h6>
-                                <small class="text-muted">{{$details['title']}}</small>
-                              </div>
-                              <span class="text-muted">{{$details['quantity']}}</span>
+          @if(session('cart'))
+              @foreach(session('cart') as $id => $details)
+                  @php $totalPrice += $details['price'] * $details['quantity'] @endphp
+                  <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <div>
+                      <h6 class="my-0">{{$details['author']}}</h6>
+                      <small class="text-muted">{{$details['title']}}</small>
+                    </div>
+                    <span class="text-muted">{{$details['quantity']}}</span>
 
-                              <span class="text-muted">{{$details['price']}} р.</span>
-                            </li>
-                        @endforeach
-                    @endif
+                    <span class="text-muted">{{$details['price']}} р.</span>
+                  </li>
+              @endforeach
+          @endif
+          <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+              <h6 class="my-0">Доставка</h6>
+            </div>
+
+
+            <span class="text-muted">{{$delivery}} р.</span>
+          </li>
           <li class="list-group-item d-flex justify-content-between">
             <span>Всего</span>
-            <strong>{{$totalPrice}} р.</strong>
+            <strong>{{$totalPrice + $delivery}} р.</strong>
           </li>
         </ul>
       </div>
 
       <div class="col-md-8 order-md-1">
         <h4 class="mb-3">Адрес для выставления счета</h4>
-        <form class="needs-validation" novalidate="" action="{{route('makeOrder')}}" method="POST">
+        <form class="needs-validation" action="{{route('makeOrder', $delivery)}}" method="POST">
           @csrf
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="firstName">Имя</label>
-              <input type="text" class="form-control" name="name" id="firstName" placeholder="" value="" required="">
-              <div class="invalid-feedback">
-                Valid first name is required.
-              </div>
+              <input type="text" class="form-control" name="name" id="firstName">
+              @error('name')
+              <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
             </div>
             <div class="col-md-6 mb-3">
               <label for="lastName">Фамилия</label>
-              <input type="text" class="form-control" name="last_name" id="lastName" placeholder="" value="" required="">
-              <div class="invalid-feedback">
-                Valid last name is required.
-              </div>
+              <input type="text" class="form-control" name="last_name" id="lastName">
+              @error('last_name')
+              <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
             </div>
           </div>
 
           <div class="mb-3">
             <label for="username">Логин</label>
             <div class="input-group">
-              <input type="text" class="form-control" name="login" id="username" placeholder="Login" required="">
-              <div class="invalid-feedback" style="width: 100%;">
-                Your login is required.
-              </div>
+              <input type="text" class="form-control" name="login" id="username">
+              @error('login')
+              <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
             </div>
           </div>
 
           <div class="mb-3">
             <label for="email">Email</label>
-            <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com">
-            <div class="invalid-feedback">
-              Please enter a valid email address for shipping updates.
-            </div>
+            <input type="email" class="form-control" name="email" id="email">
+            @error('email')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
           </div>
 
           <div class="mb-3">
             <label for="address">Адрес</label>
-            <input type="text" class="form-control" name="address" id="address" placeholder="Ленина 54, 89" required="">
-            <div class="invalid-feedback">
-              Please enter your shipping address.
-            </div>
+            <input type="text" class="form-control" name="address" id="address">
+            @error('address')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
           </div>
 
           <div class="row">
             <div class="col-md-5 mb-3">
               <label for="country">Страна</label>
-              <input type="text" class="form-control" name="country" id="zip" placeholder="" required="">
-              <div class="invalid-feedback">
-                Please select a valid country.
-              </div>
+              <input type="text" class="form-control" name="country" id="country">
+              @error('country')
+              <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
             </div>
             <div class="col-md-4 mb-3">
-              <label for="state">Город</label>
-              <input type="text" class="form-control" name="city" id="zip" placeholder="" required="">
-              <div class="invalid-feedback">
-                Please provide a valid state.
-              </div>
+              <label for="city">Город</label>
+              <input type="text" class="form-control" name="city" id="city">
+              @error('city')
+              <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
             </div>
             <div class="col-md-3 mb-3">
-              <label for="zip">Индекс</label>
-              <input type="text" class="form-control" name="zip_code" id="zip" placeholder="" required="">
-              <div class="invalid-feedback">
-                Zip code required.
-              </div>
+              <label for="zip_code">Индекс</label>
+              <input type="text" class="form-control" name="zip_code" id="zip">
+              @error('zip_code')
+              <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
             </div>
           </div>
           <hr class="mb-4">

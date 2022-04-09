@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
-    public function Order(Request $req){
+    public function Order(Request $req, $delivery){
         if (!$req->session()->has('cart')) {
             return redirect()->route('cart.list')->with('success', 'Корзина пуста');
         }
@@ -24,14 +24,15 @@ class OrderController extends Controller
         $Order->city = $req->input('city');
         $Order->zip_code = $req->input('zip_code');
         $Order->user_id = Auth::id();
+        $Order->delivery = $delivery;
 
         $oldCart = $req->session()->get('cart');
         $Order->cart = serialize($oldCart);
 
         $req->session()->forget('cart');
-        
+
         $Order->save();
-    
+
         return redirect()->route('userpage')->with('success', 'Заказ оформлен');
     }
 

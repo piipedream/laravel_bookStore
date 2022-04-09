@@ -30,24 +30,17 @@ Route::get('/books/{id}/delete_book',
 
 
 // ---------------------
-
-Route::get('/cart/checkout', function () {
-    return view('checkout');
-})->middleware('auth')->name('checkout');
+Route::post('/cart/checkout',
+'App\Http\Controllers\CartController@checkout')
+->middleware('auth')->name('checkout');;
 
 Route::get('/userpage', function () {
     return view('userpage');
 })->middleware('auth')->name('userpage');
 
-// Route::get('/userpage/orders', function () {
-//     return view('orders');
-// })->middleware('auth')->name('orders');
-
-Route::get('/userpage/orders', 'App\Http\Controllers\OrderController@getOrders')->name('orders')->middleware('auth');
-
-Route::get('/userpage/favorites', function () {
-    return view('favorites');
-})->middleware('auth')->name('favorites');
+Route::get('/userpage/orders',
+'App\Http\Controllers\OrderController@getOrders')
+->name('orders')->middleware('auth');
 
 Route::get('/userpage/add_book', function () {
     return view('add_book');
@@ -86,7 +79,7 @@ Route::name('user.')->group(function(){
 
 });
 
-Route::post('/checkout/submit', 'App\Http\Controllers\OrderController@Order')->name('makeOrder');
+Route::post('/checkout/{delivery}/submit', 'App\Http\Controllers\OrderController@Order')->name('makeOrder');
 
 Route::name('cart.')->group(function () {
     Route::get('/cart', function () {
@@ -95,4 +88,12 @@ Route::name('cart.')->group(function () {
     Route::post('/cart/store/{id}', 'App\Http\Controllers\CartController@addToCart')->name('store');
     Route::patch('/cart/update', 'App\Http\Controllers\CartController@updateCart')->name('update');
     Route::get('/cart/remove/{id}', 'App\Http\Controllers\CartController@removeCart')->name('remove');
+});
+
+Route::name('favorites.')->group(function () {
+    Route::get('/favorites', function () {
+        return view('favorites');
+    })->name('fav_list');
+    Route::get('/favorites/store/{id}', 'App\Http\Controllers\FavoritesController@addToFavorites')->name('store');
+    Route::get('/favorites/remove/{id}', 'App\Http\Controllers\FavoritesController@removeFavorites')->name('remove');
 });

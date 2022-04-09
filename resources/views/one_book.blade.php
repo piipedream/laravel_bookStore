@@ -28,7 +28,7 @@
           @csrf
           <button type="submit" class="btn btn-dark">В корзину</button>
         </form>
-        <a href="#" class="btn_fav_heart">
+        <a href="{{route('favorites.store', $data->id)}}" class="btn_fav_heart">
           &#9825;
         </a>
       </div>

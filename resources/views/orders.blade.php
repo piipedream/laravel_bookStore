@@ -10,7 +10,7 @@
       <a href="{{route('orders')}}">
         <span>
           <button class="tablinks"  id="defaultOpen">
-            <img src="/img/icons/bag.png" alt="shopping_bag">
+            <img src="/img/icons/orders.png" alt="shopping_bag">
             <br>
             Заказы
           </button>
@@ -19,7 +19,7 @@
     </div>
 
     <div class="nav_bar_block favorites">
-      <a href="{{route('favorites')}}">
+      <a href="{{route('favorites.fav_list')}}">
         <span>
           <button class="tablinks" >
             <img src="/img/icons/heart.png" alt="heart">
@@ -45,14 +45,18 @@
     @endcan
   </div>
 
-
   <div id="accordion">
+
+    <div class="mb-3">
+      <a class="btn btn-dark" data-bs-toggle="collapse" href="#collapseOne">
+        Посмотреть заказы
+      </a>
+    </div>
+
     @foreach ($orders as $order)
     <div class="card">
       <div class="card-header">
-        <a class="btn" data-bs-toggle="collapse" href="#collapseOne">
           Заказ #{{$order->id}}
-        </a>
       </div>
       <div id="collapseOne" class="collapse " data-bs-parent="#accordion">
         <div class="card-body">
@@ -111,8 +115,8 @@
 
 
           <hr class="my-4">
-
-          <p>Цена: {{$total}} р.</p>
+          <p>Доставка: {{$order->delivery}} р.</p>
+          <p>Итоговая цена: {{$total + $order->delivery}} р.</p>
           <div class="d-flex justify-content-between align-items-center">
 
             <small class="text-muted">{{$order->created_at}}</small>

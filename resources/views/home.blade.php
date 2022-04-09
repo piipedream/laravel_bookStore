@@ -19,119 +19,45 @@
 </div>
 
 <div class="container">
-  <!-- <div class="text-center mb-4">
-    <h1>Рекомендации</h1>
-  </div> -->
-
-  <!-- <div class="books_bestsellers">
-    <div class="card" style="width: 18rem;">
-      <img src="/img/books/book1.jpeg" alt="book">
-      <div class="card-body card_description">
-        <div class="card_bookname">
-          <h5 class="card-title">Благословение небожителей. Том 1</h5>
-          <p class="card-text">Мосян Тунсю</p>
-        </div>
-        <div class="price">
-          <a href="#" class="">
-            <button type="button" class="btn btn-outline-dark btn_addcart">Купить сейчас</button>
-          </a>
-          <p>990 р.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-      <img src="/img/books/book2.jpeg" alt="book">
-      <div class="card-body">
-        <div class="card_bookname">
-          <h5 class="card-title">Лисья нора</h5>
-          <p class="card-text">Нора Сакавич</p>
-        </div>
-        <div class="price">
-          <a href="#" class="">
-            <button type="button" class="btn btn-outline-dark btn_addcart">Купить сейчас</button>
-          </a>
-          <p>360 р.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-      <img src="/img/books/book3.jpeg" alt="book">
-      <div class="card-body">
-        <div class="card_bookname">
-          <h5 class="card-title">Похитители снов</h5>
-          <p class="card-text">Мэгги Стивотер</p>
-        </div>
-        <div class="price">
-          <a href="#" class="">
-            <button type="button" class="btn btn-outline-dark btn_addcart">Купить сейчас</button>
-          </a>
-          <p>586 р.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-      <img src="/img/books/book4.jpeg" alt="book">
-      <div class="card-body">
-        <div class="card_bookname">
-          <h5 class="card-title">Мечтатель Стрэндж</h5>
-          <p class="card-text">Лэйни Тейлор</p>
-        </div>
-        <div class="price">
-          <a href="#" class="">
-            <button type="button" class="btn btn-outline-dark btn_addcart">Купить сейчас</button>
-          </a>
-          <p>400 р.</p>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
 
   <div class="container">
-    <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
-    <div class="col-md-6 px-0">
-      <h1 class="display-4 font-italic">Заголовок статьи в блоге</h1>
-      <p class="lead my-3">Множественные строки текста, образующие ленту, быстро и эффективно информируют новых читателей о том, что наиболее интересно в содержании этого поста.</p>
-      <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Продолжить чтение...</a></p>
+    <div class="p-4 p-md-5 mb-4 mt-4 text-white rounded bg-dark home_poster">
+    <div class="col-md-6 px-0 bg-dark px-3 py-3">
+      <h1 class="display-4 font-italic">«Book Store»</h1>
+      <p class="lead my-3">«Book Store» - это интрнет-магазин книг, где ты найдешь много новых фантастических возможностей для путешествия и открытия новых миров.</p>
     </div>
   </div>
 
-  <div class="row mb-2">
+  <div class="row mb-4">
+    <div class="text-center mt-5 mb-5">
+      <h2>Лучшие цитаты</h2>
+    </div>
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary">Технологии</strong>
-          <h3 class="mb-0">Лучший пост</h3>
-          <div class="mb-1 text-muted">12 ноября</div>
-          <p class="card-text mb-auto">Это более широкая карточка с вспомогательным текстом ниже как естественный ввод к дополнительному контенту.</p>
-          <a href="#" class="stretched-link">Продолжить чтение</a>
+          <strong class="d-inline-block mb-2">Михаил Булгаков - Мастер и Маргарита</strong>
+          <h3 class="mb-0 mt-3">«Вы судите по костюму? Никогда не делайте этого. Вы можете ошибиться, и притом, весьма крупно.»</h3>
         </div>
         <div class="col-auto d-none d-lg-block">
-          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" role="img" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
+          <img src="img/book1_homepage.jpeg" alt="book" width="200" height="300" >
         </div>
       </div>
     </div>
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-success">Дизайн</strong>
-          <h3 class="mb-0">Заголовок поста</h3>
-          <div class="mb-1 text-muted">11 ноября</div>
-          <p class="mb-auto">Это более широкая карточка с вспомогательным текстом ниже как естественный ввод к дополнительному контенту.</p>
-          <a href="#" class="stretched-link">Продолжить чтение</a>
+          <strong class="d-inline-block mb-2">Эрих Мария Ремарк - Триумфальная арка</strong>
+          <h3 class="mb-0 mt-3">«Самый легкий характер у циников, самый невыносимый у идеалистов. Вам не кажется это странным?»</h3>
         </div>
         <div class="col-auto d-none d-lg-block">
-          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" role="img" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
+          <img src="img/book2_homepage.jpeg" alt="book" width="200" height="300" >
         </div>
       </div>
     </div>
   </div>
   </div>
+
+  <hr class="my-5">
 
   <div class="text-center mt-5 mb-5">
     <h2>Популярные писатели</h2>
@@ -158,8 +84,4 @@
   </div>
 
 </div>
-
-<!-- <script type="text/javascript">
-
-</script> -->
 @endsection

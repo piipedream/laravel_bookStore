@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('city');
             $table->string('zip_code');
             $table->string('user_id');
+            $table->smallInteger('delivery');
             $table->timestamps();
         });
     }

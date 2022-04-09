@@ -22,7 +22,7 @@
       <a href="{{route('orders')}}">
         <span>
           <button class="tablinks"  id="defaultOpen">
-            <img src="/img/icons/bag.png" alt="shopping_bag">
+            <img src="/img/icons/orders.png" alt="shopping_bag">
             <br>
             Заказы
           </button>
@@ -31,7 +31,7 @@
     </div>
 
     <div class="nav_bar_block favorites">
-      <a href="{{route('favorites')}}">
+      <a href="{{route('favorites.fav_list')}}">
         <span>
           <button class="tablinks" >
             <img src="/img/icons/heart.png" alt="heart">

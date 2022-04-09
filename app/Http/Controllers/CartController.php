@@ -72,4 +72,8 @@ class CartController extends Controller
             return redirect()->back()->with('success', 'Книга удалена!');
         }
     }
+
+    public function checkout(Request $request) {
+        return view('checkout', ['delivery' => $request->delivery_select]);
+    }
 }
