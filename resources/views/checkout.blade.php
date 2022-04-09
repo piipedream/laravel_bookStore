@@ -47,14 +47,14 @@
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="firstName">Имя</label>
-              <input type="text" class="form-control" name="name" id="firstName">
+              <input type="text" class="form-control" name="name" id="firstName" required>
               @error('name')
               <div class="alert alert-danger">{{ $message }}</div>
               @enderror
             </div>
             <div class="col-md-6 mb-3">
               <label for="lastName">Фамилия</label>
-              <input type="text" class="form-control" name="last_name" id="lastName">
+              <input type="text" class="form-control" name="last_name" id="lastName" required>
               @error('last_name')
               <div class="alert alert-danger">{{ $message }}</div>
               @enderror
@@ -64,7 +64,7 @@
           <div class="mb-3">
             <label for="username">Логин</label>
             <div class="input-group">
-              <input type="text" class="form-control" name="login" id="username">
+              <input type="text" class="form-control" name="login" value="{{Auth::user()->login}}" id="username" required>
               @error('login')
               <div class="alert alert-danger">{{ $message }}</div>
               @enderror
@@ -73,7 +73,7 @@
 
           <div class="mb-3">
             <label for="email">Email</label>
-            <input type="email" class="form-control" name="email" id="email">
+            <input type="email" class="form-control" name="email" id="email" required>
             @error('email')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
@@ -81,7 +81,7 @@
 
           <div class="mb-3">
             <label for="address">Адрес</label>
-            <input type="text" class="form-control" name="address" id="address">
+            <input type="text" class="form-control" name="address" id="address" required>
             @error('address')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
@@ -90,21 +90,21 @@
           <div class="row">
             <div class="col-md-5 mb-3">
               <label for="country">Страна</label>
-              <input type="text" class="form-control" name="country" id="country">
+              <input type="text" class="form-control" name="country" id="country" required>
               @error('country')
               <div class="alert alert-danger">{{ $message }}</div>
               @enderror
             </div>
             <div class="col-md-4 mb-3">
               <label for="city">Город</label>
-              <input type="text" class="form-control" name="city" id="city">
+              <input type="text" class="form-control" name="city" id="city" required>
               @error('city')
               <div class="alert alert-danger">{{ $message }}</div>
               @enderror
             </div>
             <div class="col-md-3 mb-3">
               <label for="zip_code">Индекс</label>
-              <input type="text" class="form-control" name="zip_code" id="zip">
+              <input type="text" class="form-control" name="zip_code" id="zip" required\>
               @error('zip_code')
               <div class="alert alert-danger">{{ $message }}</div>
               @enderror
